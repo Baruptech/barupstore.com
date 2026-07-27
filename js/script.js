@@ -359,3 +359,89 @@ color.style.outline="3px solid #d4af37";
 };
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*==============================
+TRENDING SLIDER
+===============================*/
+
+const slider = document.querySelector(".trending-slider");
+
+document.querySelector(".next").onclick = () => {
+
+    slider.scrollBy({
+
+        left:340,
+
+        behavior:"smooth"
+
+    });
+
+};
+
+document.querySelector(".prev").onclick = () => {
+
+    slider.scrollBy({
+
+        left:-340,
+
+        behavior:"smooth"
+
+    });
+
+};
+
+/* Auto Slide */
+
+setInterval(()=>{
+
+    if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
+
+        slider.scrollTo({
+
+            left:0,
+
+            behavior:"smooth"
+
+        });
+
+    }else{
+
+        slider.scrollBy({
+
+            left:340,
+
+            behavior:"smooth"
+
+        });
+
+    }
+
+},4000);
+
+
+
+
+
+
+
+
+
+
